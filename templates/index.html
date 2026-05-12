@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Почта — Войти</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+  <body>
+    <!-- LEFT -->
+    <div class="left-panel">
+      <div class="bg-orb orb1"></div>
+      <div class="bg-orb orb2"></div>
+      <div class="bg-orb orb3"></div>
+      <div class="grid-lines"></div>
+
+      <div class="left-content">
+        <div class="logo fade-up">MailVault</div>
+
+        <h1 class="tagline fade-up">
+          Ваши письма.<br />
+          <em>Под надёжной</em><br />
+          защитой.
+        </h1>
+
+        <p class="sub fade-up">
+          Безопасная почта с умным поиском,<br />
+          шифрованием и элегантным интерфейсом —<br />
+          всё в одном месте.
+        </p>
+
+        <div class="floating-cards fade-up">
+          <div class="stat-card">
+            <div class="num">256</div>
+            <div class="label">Bit шифр.</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">99.9%</div>
+            <div class="label">Аптайм</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">∞</div>
+            <div class="label">Архив</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+      <form method="POST" action="/login">
+        <div class="form-header fade-up">
+          <h2>Добро пожаловать</h2>
+          <p>Введите данные для входа в почту</p>
+        </div>
+
+        <div class="field fade-up">
+          <label>Email адрес</label>
+          <div class="input-wrap">
+            <input
+              type="email"
+              name="username"
+              autocomplete="email"
+              placeholder="Username,Login, or Email"
+            />
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="3" />
+              <path d="m2 7 10 7 10-7" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="field fade-up">
+          <label>Пароль</label>
+          <div class="input-wrap">
+            <input
+              type="password"
+              name="password"
+              placeholder="••••••••"
+              id="pwdInput"
+              autocomplete="current-password"
+            />
+            <svg
+              id="eyeIcon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="cursor: pointer; pointer-events: all"
+              onclick="togglePwd()"
+            >
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-login fade-up">
+          <span>Войти в почту</span>
+        </button>
+        <div class="forgot fade-up"><a href="#">Забыли пароль?</a></div>
+      </form>
+
+      <div class="divider fade-up">или</div>
+
+      <button class="btn-google fade-up">
+        <svg width="18" height="18" viewBox="0 0 48 48">
+          <path
+            fill="#FFC107"
+            d="M43.6 20H24v8h11.3C33.7 33.4 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9L37.4 9.4C34 6.4 29.3 4.5 24 4.5 12.7 4.5 3.5 13.7 3.5 25S12.7 45.5 24 45.5c10.5 0 19.5-7.6 19.5-20.5 0-1.4-.1-2.7-.4-4z"
+          />
+          <path
+            fill="#FF3D00"
+            d="M6.3 15.7l6.6 4.8C14.5 17 18.9 14 24 14c3 0 5.7 1.1 7.8 2.9L37.4 9.4C34 6.4 29.3 4.5 24 4.5c-7.7 0-14.4 4.4-18.1 10.7-.1.2-.1.4 0 .5z"
+          />
+          <path
+            fill="#4CAF50"
+            d="M24 45.5c5.2 0 9.9-1.8 13.4-4.8l-6.2-5.2C29.3 37.1 26.8 38 24 38c-5.2 0-9.6-3.5-11.3-8.3l-6.6 5.1C9.7 41.2 16.4 45.5 24 45.5z"
+          />
+          <path
+            fill="#1976D2"
+            d="M43.6 20H24v8h11.3c-.8 2.2-2.3 4-4.2 5.2l6.2 5.2C41.3 35.1 44 30.5 44 24.5c0-1.4-.1-2.7-.4-4z"
+          />
+        </svg>
+        Войти через Google
+      </button>
+
+      <p class="signup fade-up">
+        Нет аккаунта? <a href="#">Создать бесплатно</a>
+      </p>
+    </div>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>
